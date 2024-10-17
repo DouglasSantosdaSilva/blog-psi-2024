@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,17 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- 
-    - primary meta tags
-  -->
-  <title>Impacto da Má Alimentação na Saúde</title>
+
+  {% extends "base.html" %}
+  <title>{% block title %}{{ block.super }} - Impacto da Má Alimentação na Saúde{% endblock %}</title>
   <meta name="title" content="Impacto da Má Alimentação na Saúde">
   <meta name="description" content="Blog das Biomoléculas">
 
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./assets/images/nutrition-icon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="{% static 'assets/images/nutrition-icon.svg' %}" type="image/svg+xml">
 
   <!-- 
     - google font link
@@ -29,7 +29,7 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 
   <!-- 
     - preload images

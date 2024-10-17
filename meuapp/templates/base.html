@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,14 +10,14 @@
   <!-- 
     - primary meta tags
   -->
-  <title>{% block title %}Impacto da Má Alimentação na Saúde{endblock %}</title>
+  <title>{% block title %}Impacto da Má Alimentação na Saúde{% endblock %}</title>
   <meta name="title" content="Impacto da Má Alimentação na Saúde">
   <meta name="description" content="Blog das Biomoléculas">
 
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./assets/images/nutrition-icon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="{% static 'assets/images/nutrition-icon.svg' %}" type="image/svg+xml">
 
   <!-- 
     - google font link
@@ -29,14 +30,14 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 
   <!-- 
     - preload images
   -->
-  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
-  <link rel="preload" as="image" href="./assets/images/pattern-2.svg">
-  <link rel="preload" as="image" href="./assets/images/pattern-3.svg">
+  <link rel="preload" as="image" href="{% static 'assets/images/hero-banner.png' %}">
+  <link rel="preload" as="image" href="{% static 'assets/images/pattern-2.svg' %}">
+  <link rel="preload" as="image" href="{% static 'assets/images/pattern-3.svg' %}">
 
 </head>
 
@@ -50,14 +51,14 @@
     <div class="container">
 
       <a href="#" class="logo">
-        <img src="./assets/images/nutrition-icon.svg" width="45" height="auto" alt="logo">
+        <img src="{% static 'images/nutrition-icon.svg' %}" width="45" height="auto" alt="logo">
       </a>
 
       <nav class="navbar" data-navbar>
 
         <div class="navbar-top">
           <a href="#" class="logo">
-            <img src="./assets/images/nutrition-icon.svg" width="45" height="auto" alt="logo">
+            <img src="{% static 'images/nutrition-icon.svg' %}" width="45" height="auto" alt="logo">
           </a>
 
           <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
@@ -84,7 +85,7 @@
       </nav>
 
       <a href="index.html" class="logo">
-        <img src="./assets/images/logo-if.png" width="25" height="auto" alt="logo">
+        <img src="{% static 'images/logo-if.png' %}" width="25" height="auto" alt="logo">
       </a>
 
       <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
@@ -94,44 +95,107 @@
     </div>
   </header>
 
-  <main>
-    <article>
+  {% block content %}
+  {% endblock content %}
 
-      <!-- 
-        - #HERO
-      -->
-
-      <section class="hero" id="home" aria-label="home">
-        <div class="container">
-
-          <div class="hero-content">
-
-            <p class="hero-subtitle">Blog das Biomoléculas</p>
-
-            <h1 class="headline headline-2 section-title">
-              Impacto da <span class="span">Má Alimentação</span> na saúde
-            </h1>
-
-            <p class="hero-text">
-              Para os seres humanos, a alimentação é um artifício essencial, pois tem a função de transportar os nutrientes, vitaminas e minerais necessários para o organismo, além de fornecer energia para a manutenção, crescimento e reprodução, mantendo o funcionamento adequado do corpo. Diante da falta de alguns nutrientes, o corpo pode sofrer graves consequências em virtude da interrupção de alguma atividade básica. Neste blog, apresentaremos os efeitos decorrentes de uma má alimentação na saúde. 
-            </p>
-
-
+          
+      <footer>
+        <div class="container" id="sobre">
+    
+          <div class="card footer">
+    
+            <div class="section footer-top">
+    
+              <div class="footer-brand">
+    
+                <a href="#" class="logo">
+                  <img src="{% static 'images/logo-ifrn.png' %}" width="200" height="auto" alt="logo">
+                </a>
+    
+                <p class="footer-text">
+                  Este site foi criado para fins acadêmicos, com o intuito de compartilhar informações referentes à assuntos da matéria de Biologia.
+                </p>
+    
+              </div>
+    
+              <div class="footer-brand">
+                <p class="footer-list-title">InfoWeb 3M</p>
+    
+                <p class="footer-text">
+                  Biologia I <br>
+                  Prof. Tuca Surini
+                </p>
+    
+                <p class="footer-list-title">Componentes do grupo</p>
+    
+                <p class="footer-text">Francisco Douglas<br>Maria Clara<br>Mateus Cosme<br>Sara Monalisa<br>Stephanny Nayane
+                </p>
+              </div>
+              <div class="footer-list">
+    
+                <p class="footer-list-title">Referências</p>
+    
+                <ul>
+    
+                  <li><a href="https://semprebem.paguemenos.com.br/posts/saude/ma-alimentacao" class="footer-link hover-2">Sempre Bem</a></li>
+                  <li><a href="https://intertvweb.com.br/bem-estar/ma-alimentacao-e-seus-riscos-para-a-saude/" class="footer-link hover-2">Intertv Web</a></li>
+                  <li><a href="https://hepatogastro.com.br/quais-as-consequencias-da-ma-alimentacao/" class="footer-link hover-2">Hepatogastro</a></li>
+                  <li><a href="https://www.camim.com.br/sedentarismo-e-ma-alimentacao-na-infancia-e-adolescencia/" class="footer-link hover-2">Camim</a></li>
+                  <li><a href="https://fghmedicina.com.br/doencas-ma-alimentacao/#:~:text=A%20m%C3%A1%20alimenta%C3%A7%C3%A3o%20%C3%A9%20caracterizada,e%20condi%C3%A7%C3%B5es%20cr%C3%ADticas%20de%20sa%C3%BAde" class="footer-link hover-2">FGH Medicina</a></li>
+                  <li><a href="https://www.sobiologia.com.br/conteudos/Corpo/alimentos.php" class="footer-link hover-2">Só Biologia</a></li>
+                  <li><a href="https://brasilescola.uol.com.br/saude-na-escola/nutrientes.htm" class="footer-link hover-2">Brasil Escola</a></li>
+                  <li><a href="https://www.revistalofficiel.com.br/wellness/ma-alimentacao-interfere-nos-resultados-da-atividade-fisica" class="footer-link hover-2">Revista Officiel</a></li>
+                  <li><a href="https://www.cedroni.com.br/post/pir%C3%A2mide-alimentar-o-que-%C3%A9-tipos-e-para-que-serve" class="footer-link hover-2">Cedroni</a></li>
+                  <li><a href="Exercício físico e alimentação: qual a importância dessa relação? - Blog - Personal Virtual (meupersonalvirtual.com.br)" class="footer-link hover-2">Meu Personal Virtual</a></li>
+                  <li><a href="Má alimentação: consequências, sintomas e doenças | IMEB" class="footer-link hover-2">IMEB</a></li>
+    
+    
+                </ul>
+    
+              </div>
+    
+            </div>
+    
+            <div class="footer-bottom">
+    
+              <p class="copyright">
+                &copy; Desenvolvido por <a href="#" class="copyright-link">Infoweb 3M.</a>
+              </p>
+    
+            </div>
+    
           </div>
-
-          <div class="hero-banner">
-
-            <img src="./assets/images/foto-banner.png" width="427" height="auto" alt="" class="w-100">
-
-            <img src="./assets/images/pattern-2.svg" width="27" height="26" alt="shape" class="shape shape-1">
-
-            <img src="./assets/images/pattern-3.svg" width="27" height="26" alt="shape" class="shape shape-2">
-
-          </div>
-
-          <img src="./assets/images/shadow-1.svg" width="500" height="800" alt="" class="hero-bg hero-bg-1">
-
-          <img src="./assets/images/shadow-2.svg" width="500" height="500" alt="" class="hero-bg hero-bg-2">
-
+    
         </div>
-      </section>
+      </footer>
+    
+    
+    
+    
+    
+      <!-- 
+        - #BACK TO TOP
+      -->
+    
+      <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+        <ion-icon name="arrow-up-outline" aria-hidden="true"></ion-icon>
+      </a>
+    
+    
+    
+    
+    
+      <!-- 
+        - custom js link
+      -->
+      <script src="./assets/js/script.js"></script>
+    
+      <!-- 
+        - ionicon link
+      -->
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    </body>
+    
+    </html>
